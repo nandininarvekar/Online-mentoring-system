@@ -1,0 +1,19 @@
+<%- include('partials/header') %>
+
+<h1>MH Mentor Name:</h1>
+<form action="/" method="POST">
+    <div class="form-group">
+        <label>Title</label>
+        <input type="text" class="form-control" name ="postTitle">
+    </div>
+    <div class="form-group">
+        <label>Post</label>
+        <textarea name="post"  class="form-control"  cols="20" rows="10"></textarea>
+    
+    </div>
+    <button type="submit" name="button" class="btn btn-primary" >Publish</button>
+    <button type="submit" name="button" class="btn btn-primary" >Schedule meeting</button>
+    <button type="submit" name="button" class="btn btn-primary" >See the mentee list</button>
+    
+</form>
+<%- include('partials/footer') %>

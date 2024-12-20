@@ -1,0 +1,33 @@
+
+<%- include('partials/header') %>
+
+        
+<h1>Allot mh mentor:</h1>
+<form action="/assign_mh" method="post">
+   <input type="text" style="color:black" name="Mentee_prn" placeholder="Meentee-prn" >
+   <input type="text" style="color:black" name="mh_Mentor_id" placeholder="Meentor-id">
+   <button type="submit" class="btn btn-info">assign</button>
+</form>
+             
+<div class="rightbox">
+    <ul>
+        <h1>Mentee to be assigned:</h1>
+       <% for(var i=0; i<data[0].length; i++) { %>
+          <li> <%= data[0][i].mentee_prn %></li>
+       <% } %>
+    </ul>
+   
+
+
+</div>   
+<ul>
+   <h3>Mental Health Mentor List</h3>
+   <% for(var i=0; i<data[1].length; i++) { %>
+      <li><%= data[1][i].Mentor_id %> <%= data[1][i].men_name %>-<%= data[1][i].MH_type %></li>
+   <% } %>
+</ul>
+
+         
+
+ 
+<%- include('partials/footer') %>

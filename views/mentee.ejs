@@ -1,0 +1,17 @@
+<%- include('partials/header') %>
+
+<h1><b>  <%= data[0][0].Mentee_Prn %> <%= data[0][0].Mentee_Name %></b> </h1>
+<h3> General Mentor name:<b><%= data[2][0].Mentor_id %> <%= data[2][0].Men_name %></b>  </h3>
+
+<% if(data[1].length > 0){ %>
+    <h3> Mental Health Mentor name: <b><%= data[1][0].Mentor_id %> <%= data[1][0].Men_name %></b></h3>
+<% } else{ %>  
+    <h3> Mental Health Mentor name: NA </h3>
+<% } %>
+
+<h3> Scheduled meetings:</h3>
+
+<h3>DATE and TIME:<b><%= data[2][0].Meeting_Time %> <br> LINK: <%= data[2][0].link %></b> </h3>
+
+<%- include('partials/footer') %>
+

@@ -1,0 +1,102 @@
+<%- include('partials/header') %>
+
+
+<!-- <form action="/" method="POST">
+    <div class="form-group">
+        <label>Title</label>
+        <input type="text" class="form-control" cols="5" rows="5" name ="postTitle">
+    </div>
+    <div class="form-group">
+        <label>Post</label>
+        <textarea name="post"  class="form-control"  cols="20" rows="5"></textarea> 
+    
+    </div> -->
+    
+    <h1><b> <%= row[0][0].Men_name %> </b> </h1>
+    <h3><b> Admin Assigned-  <%= row[0][0].admin_username %> </b> </h3>
+   
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Mentee_id</th>
+            <th scope="col">Mentee Name</th>
+            <th scope="col">Mentee Phno</th>
+            <th scope="col">Meeting Date&Time</th>
+            <th scope="col">Meeting Link</th>
+            <th scope="col">Send meeting Details</th>
+            <th scope="col">MH help</th>
+
+          </tr>
+        </thead>
+       
+        <tbody> 
+            <% for(var i=0; i<row[1].length; i++) { %>
+                <tr>
+                    <td><%= row[1][i].mentee_id %></td>
+                    <td><%= row[1][i].mentee_name %></td>
+                    <td><%= row[1][i].Mentee_phone_no %></td>
+                    
+                        <form action= "/schedule" method="post" >
+                        <td>
+                        
+                            <input style="color:black;" type="text" name="time" placeholder="eg.12Oct 12pm">
+                        </td>
+                        <td>
+                            <input  style="color:black;" type="text" name="link" placeholder="Meeting link">
+                        </td>
+                        <td>
+                            <input   style="color:black;" type="text" name="m_id" placeholder="Mentee-id">
+                            <button type="submit" id ="button_send" name="button_s" class="btn btn-info" value= "insert">Send</button>
+                           
+                        </td>
+                       
+                        </form>
+
+                        <td>
+                            <form  action= "/askhelp" method="post">
+                                <input style="color:black;"  type="text" name="admin_uname" placeholder="admin username">
+                                <input   style="color:black;" type="text" name="mentee_id" placeholder="mentee-id">
+                                <button   style="color:black;"type="submit" id ="send" name="button_s" class="btn btn-info" value= "insert">Send</button>
+                               
+                            
+                                
+                            </form>
+                          
+                        </td>
+                    
+                </tr>
+                
+             <% } %>
+        </tbody>
+      </table>
+    <h3>Meetings scheduled:</h3>
+    <ul>
+        <% for(var i=0; i<row[2].length; i++) { %>
+           <li> <p><h4><b>Mentee-id :<%= row[2][i].Mentee_id %></h4><h4><b>Date&Time :<%= row[2][i].Meeting_Time %></h4><h4><b>Link : </b><%= row[2][i].link %> </b></h4> </p>
+           </li>
+        <% } %>
+    </ul>
+   
+
+
+
+    <!-- <form action="">
+        <input id="m" autocomplete="off"  class="form-control" /><button>Send</button>
+    </form> -->
+    <!-- <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+       $(function () {
+            var socket = io();
+            $('form').submit(function(){
+            socket.emit('chat message', $('#m').val());
+            $('#m').val('');
+            return false;
+            });
+        });
+    </script> -->
+   
+  
+    
+</form>
+<%- include('partials/footer') %>
