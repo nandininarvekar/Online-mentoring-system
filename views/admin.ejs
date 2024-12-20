@@ -1,0 +1,62 @@
+<%- include('partials/header') %>
+
+<h1><b>(<%= row1[0][0].admin_username %>)</b><b><%= row1[0][0].admin_name %></b>  </h1>
+<div class="leftbox">
+   
+    <ul>
+        <h3><b>Mentee List</b></h3>
+        <% for(var i=0; i<row1[1].length; i++) { %>
+           <li><%= row1[1][i].mentee_prn %>  <%= row1[1][i].mentee_name %></li>
+        <% } %>
+        </ul>
+  
+</div>
+
+<div class="middlebox">
+  
+    <ul>
+        <h3><b>Subject Mentor List</b></h3>
+        <% for(var i=0; i<row1[3].length; i++) { %>
+           <li><%= row1[3][i].mentor_id %> <%= row1[3][i].men_name %> -<%= row1[3][i].men_sub %></li>
+        <% } %>
+        </ul>
+    
+</div>
+
+
+<div class="rightbox">
+   
+    <ul>
+        <h3><b>MH Mentor List</b></h3>
+        <% for(var i=0; i<row1[4].length; i++) { %>
+           <li><%= row1[4][i].mentor_id %> <%= row1[4][i].men_name %>-<%= row1[4][i].MH_type %></li>
+        <% } %>
+        </ul>
+
+</div>     
+   <h3><b>Input</b></h3>
+    <h4><a href="/mentor_signup" style="color: wheat;">New Mentor</a></h4>
+               
+    <h4><a href="/assign_mh" style="color: wheat">Assign Counsellor</a></h4>
+
+    <h4><a href="/insert_sub_mentor" style="color: wheat">General Mentor Data </a></h4>
+
+    <h4><a href="/insert_mhmen"style="color: wheat" > Counsellor Data</a></h4>
+
+    <h3><b>Mentee Count</b></h3>
+    <h3><%= row1[2][1].count%></h3>
+
+
+<!-- <form action="/admin" method="get">
+    <input type="text" name="Mentee_name" placeholder="Meentee Name">
+    <button type="submit" class="btn btn-info">Search</button>
+</form>         -->
+    
+
+
+
+
+
+
+
+<%- include('partials/footer') %>
