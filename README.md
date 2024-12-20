@@ -9,6 +9,8 @@ Mentoring is a traditional method of communication between experienced professio
 ## 2. Proposed Architecture
 Our proposed online educational mentoring system consists roles such as Admin, Mentors, Specialized Mental Health Counselors and Mentees. The Admin is responsible for adding Mentors into the system, assigning the Mentors to the Mentees and providing login credentials to Mentors. One Mentor can be assigned to at most 7 Mentees. Each Mentor has attributes namely Subject, Mentor ID, Password, Email ID, Mobile No and DOB. He can see the final list of Mentees assigned to him and can schedule meetings with them. The meetings can be conducted on one-on-one basis as well as in groups. Mentors are of two types: General Mentor and Specialized Mental Health Mentor. The General mentor asks the admin to assign a Mental Health Mentor to a Mentee if necessary. The Admin then assigns a Counselor to the Mentee. The Mentees are registered by the Admin. After the registration, the Admin will provide login credentials to the Mentees. We store each Mentee’s name, Email Id, DOB, University, Mentee Id, Phone No, Username, Password. A Mentee can ask for a one-on-one meeting session with his Mentor through the portal.
 
+<br>
+
 ## 3. Tools and Technologies
 
 ### 3.1. Backend:
